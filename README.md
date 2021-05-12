@@ -1,6 +1,6 @@
-# A Bunch of Docker Environments
+# Docker Development Environments
 
-For info about these containers refer to the original [GitHub repo](https://github.com/gabrieleara/working_environments).
+For info about these containers refer to the original [GitHub repo](https://github.com/gabrieleara/dev_environments).
 
 This repo should contain a bunch of Docker environments that will be built into
 images on Docker Hub.
