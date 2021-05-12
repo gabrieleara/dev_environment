@@ -1,11 +1,22 @@
 # Docker Development Environments
 
-For info about these containers refer to the original [GitHub repo](https://github.com/gabrieleara/dev_environment).
+A set of Docker environments with my typical development configurations.
 
-This repo should contain a bunch of Docker environments that will be built into
-images on Docker Hub.
+For info about these containers refer to the original [GitHub
+repo](https://github.com/gabrieleara/dev_environment).
 
-Each branch (excluding `main`) corresponds to a different image tag that will be
-hosted on Docker Hub. Check them out if you want to see the original
-`Dockerfile`s, some resources that I commonly use in those environments
-(including VSCode `devcontainer.json` commonly used values) and so forth.
+# Brief Description
+
+This repo contains some Docker environments that I typically use for development
+and day to day operations on projects and papers.
+
+Each branch corresponds to a different image tag for the
+`gabrieleara/dev_environment` image on
+[DockerHub](https://hub.docker.com/r/gabrieleara/dev_environment).
+
+In each branch you will find a dedicated directory with:
+ - the `Dockerfile` used to build the image;
+ - the `devcontainer.json` that I typically use as base for [VSCode Dev
+   Containers](https://code.visualstudio.com/docs/remote/create-dev-container);
+ - other optional resources that depend on the environment in question
+   (Makefiles, and other stuff).
