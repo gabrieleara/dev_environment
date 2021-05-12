@@ -1,0 +1,28 @@
+// This file contains the typical configuration I use for
+// dev containers based on the Dockerfile in this folder.
+{
+    "name": "LaTeX",
+    "build": {
+        // NOTE: Use gabrieleara/working_environments:latex as base image
+        "dockerfile": "Dockerfile"
+    },
+    // Arguments typically provided to the docker run command
+    "runArgs": [
+        "-e",
+        "DISPLAY=${env:DISPLAY}",
+        "-v",
+        "/tmp/.X11-unix:/tmp/.X11-unix",
+        "-e",
+        "QT_GRAPHICSSYSTEM=native",
+        "--device=/dev/dri:/dev/dri"
+    ],
+    // IDs of VS Code extensions that I typically use this kind of development
+    "extensions": [
+        "james-yu.latex-workshop",
+        "ms-python.python",
+        "mechatroner.rainbow-csv",
+        "grapecity.gc-excelviewer"
+    ],
+    // Important: use this to login as vscode user, rather than root
+    "remoteUser": "vscode"
+}
