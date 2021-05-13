@@ -1,17 +1,73 @@
 // This file contains the typical configuration I use for
 // dev containers based on the Dockerfile in this folder.
 {
-    "name": "LaTeX-Python",
+    "name": "LaTeX",
     "build": {
         // NOTE: Use gabrieleara/working_environments:latex as base image
         "dockerfile": "Dockerfile"
     },
     // Arguments typically provided to the docker run command
+    // Arguments typically provided to the docker run command
     "runArgs": [],
     // IDs of VS Code extensions that I typically use this kind of development
     "extensions": [
-        "james-yu.latex-workshop"
+        "james-yu.latex-workshop",
+        "ban.spellright",
+        "stkb.rewrap"
     ],
+    // Default settings that will be copied into the container once created
+    "settings": {
+        "editor.formatOnSaveMode": "file",
+        "spellright.language": [
+            "en_US",
+            "it_IT"
+        ],
+        "spellright.documentTypes": [
+            "markdown",
+            "latex",
+            "plaintext"
+        ],
+        "latex-workshop.latex.recipes": [
+            {
+                "name": "make",
+                "tools": [
+                    "make"
+                ]
+            }
+        ],
+        "latex-workshop.latex.tools": [
+            {
+                "name": "make",
+                "command": "make",
+            }
+        ],
+        "files.exclude": {
+            "**/**.aux": true,
+            "**/**.out": true,
+            "**/**.bbl": true,
+            "**/**.blg": true,
+            "**/**.fdb_latexmk": true,
+            "**/**.fls": true,
+            "**/**.synctex.gz": true,
+            "**/**.log": true,
+            "**/**.tdo": true,
+            "**/main-*.svg": true,
+            "**/**.4ct": true,
+            "**/**.4tc": true,
+            "**/**.css": true,
+            "**/**.dvi": true,
+            "**/**.html": true,
+            "**/**.idv": true,
+            "**/**.lg": true,
+            "**/**.tmp": true,
+            "**/**.xref": true,
+            "**/html.": true,
+            "**/**.glsdefs": true,
+        },
+        "rewrap.wrappingColumn": 80,
+        // "rewrap.doubleSentenceSpacing": true,
+        "editor.tabSize": 2,
+    },
     // Important: use this to login as vscode user, rather than root
     "remoteUser": "vscode"
 }

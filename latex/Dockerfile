@@ -15,6 +15,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt update \
     texlive-publishers \
     texlive-science \
     texlive-lang-all \
+    texlive-xetex \
+    texlive-bibtex-extra \
+    biber \
     ghostscript \
     poppler-utils \
     && apt -y autoremove \
