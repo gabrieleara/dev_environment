@@ -11,12 +11,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 RUN export DEBIAN_FRONTEND=noninteractive && apt update \
     && apt -y install --install-recommends \
     make \
-    texlive-latex-extra \
-    texlive-publishers \
-    texlive-science \
-    texlive-lang-all \
-    texlive-xetex \
-    texlive-bibtex-extra \
+    texlive-full \
     biber \
     ghostscript \
     poppler-utils \
