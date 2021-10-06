@@ -15,16 +15,16 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 # handldling and visualization
 
 # Additional dependencies for miniconda and other libraries
-RUN export DEBIAN_FRONTEND=noninteractive && apt update \
-    && apt -y install \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update \
+    && apt-get -y install \
     wget \
     bzip2 \
     ca-certificates \
     curl \
     git \
     libgtk2.0-dev \
-    && apt -y autoremove \
-    && apt -y clean \
+    && apt-get -y autoremove \
+    && apt-get -y clean \
     && rm -rf /var/lib/apt/lists/*
 
 # Miniconda path
