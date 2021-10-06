@@ -54,7 +54,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get update \
 
 # TODO: copy some more tools useful to running stuff inside Qemu-KVM
 
-COPY ./kernel/start.sh /start.sh
-COPY ./kernel/startup-scripts /opt/startup-scripts
+COPY ./start.sh /start.sh
+COPY ./startup-scripts /opt/startup-scripts
 
 # ENTRYPOINT /start.sh
