@@ -19,6 +19,7 @@ rebase: $(branches_rebase)
 
 $(branches_rebase):
 	git checkout $(shell echo $@ | sed 's/rebase-//')
+	git pull
 	git rebase main
 	git push --force
 	git checkout $(cur_branch)
