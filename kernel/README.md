@@ -19,3 +19,16 @@ gabrieleara/dev_environment:kernel
 
 The [devcontainer.json](devcontainer.json) file shows typical settings that I
 use on dev containers that use the image provided by the linked Dockerfile.
+
+The content of this directory should not be necessary if the prebuilt image is
+used. If using the Dockerfile to build the container from scratch, include the
+content of this directory in the `.devcontainer` directory in your project.
+
+Even when using the prebuild image like mentioned before, you can add scripts
+that are run during the container initialziation by placing them inside the
+'/opt/startup-scripts` folder inside the container.
+
+To run arbitrary commands inside this container, use the `docker run` with the
+`--cmd` option to pass the command and parameters. This is necessary because for
+reasons that I don't want to elaborate at this moment the container must use a
+custom entry point. To get a live shell use `--cmd bash`.
