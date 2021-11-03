@@ -29,5 +29,7 @@
         "eamodio.gitlens"
     ],
     // Important: use this to login as vscode user, rather than root
-    "remoteUser": "vscode"
+    "remoteUser": "vscode",
+    // This will make the "start.sh" file the entry point once again
+    "overrideCommand": false,
 }

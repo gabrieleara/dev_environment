@@ -57,4 +57,5 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get update \
 COPY ./start.sh /start.sh
 COPY ./startup-scripts /opt/startup-scripts
 
-# ENTRYPOINT /start.sh
+ENTRYPOINT ["/start.sh"]
+CMD ["/bin/sh", "-c", "while sleep 1000; do :; done"]
