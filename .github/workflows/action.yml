@@ -27,4 +27,4 @@ jobs:
         with:
           context: '${{ github.ref_name }}'
           push: true
-          tags: 'gabrieleara/dev_environment:${github.ref_name}'
+          tags: 'gabrieleara/dev_environment:${{ github.ref_name }}'
