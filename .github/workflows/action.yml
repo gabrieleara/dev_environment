@@ -1,7 +1,5 @@
 name: 'build_push_docker'
 
-description: 'Builds and pushes Docker images (one per branch in the corresponding directory)'
-
 on:
   push:
     branches-ignore:
