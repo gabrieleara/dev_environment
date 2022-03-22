@@ -2,7 +2,7 @@
 
 # Based on my C/C++ Dev Environment
 
-FROM gabrieleara/dev_environment:cpp
+FROM gabrieleara/dev_environment:cpp-bionic
 
 # -------------------- Frequently Used Development Tools --------------------- #
 
