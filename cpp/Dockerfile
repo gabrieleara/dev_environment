@@ -2,7 +2,7 @@
 
 # Based on VSCode C++ Dev Container Ubuntu 20.04 Focal version
 
-ARG VARIANT="focal"
+ARG VARIANT="bionic"
 FROM mcr.microsoft.com/vscode/devcontainers/cpp:0-${VARIANT}
 
 # -------------------- Frequently Used Development Tools --------------------- #
