@@ -13,6 +13,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get update \
     build-essential \
     module-assistant \
     libncurses-dev \
+    gcc-aarch64-linux-gnu \
+    binutils-aarch64-linux-gnu \
     gawk \
     flex \
     bison \
@@ -41,6 +43,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && apt-get update \
     libgl1-mesa-glx \
     libvirt-daemon-system \
     qemu-kvm \
+    qemu-system-aarch64 \
+    gdb-multiarch \
     virtinst \
     virt-viewer \
     libcanberra-gtk-module \
