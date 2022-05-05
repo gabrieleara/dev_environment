@@ -9,6 +9,10 @@ on:
     branches-ignore:
       - main
       - 'dependabot/**'
+  workflow_dispatch:
+    branches-ignore:
+      - main
+      - 'dependabot/**'
 
 jobs:
   docker:
