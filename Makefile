@@ -1,8 +1,9 @@
 # dirs        = $(shell ls -d */ | sed 's#/##' | sort)
-branches    = $(shell git branch -a | grep remotes/origin/ | grep -v HEAD | grep -v main | sed 's#remotes/origin/##' | xargs)
+branches    = $(shell git branch -a | grep remotes/origin/ | grep -v HEAD | grep -v main | grep -v 'dependabot/' | sed 's#remotes/origin/##' | xargs)
 cur_branch  = $(shell git rev-parse --abbrev-ref HEAD)
 
 branches_rebase = $(addprefix rebase-, $(branches))
+branches_manual = $(addprefix manual-, $(branches))
 
 .PHONY: all build rebase $(dirs) $(branches) $(branches_rebase)
 
@@ -23,6 +24,9 @@ $(branches_rebase):
 	git rebase main
 	git push --force
 	git checkout $(cur_branch)
+
+$(branches_manual):
+	gh workflow run "Build and Push on DockerHub" --ref $(shell echo $@ | sed 's/manual-//')
 
 # all: $(dirs)
 # $(dirs):

@@ -1,17 +1,21 @@
-name: 'build_push_docker'
+name: Build and Push on DockerHub
 
 on:
+  # This workflow runs for all branches except the main
+  # branch or dependabot-created ones
+
+  # Run workflow on push of a new commit
   push:
     branches-ignore:
-      # Runs for all branches except the main branch
-      - 'main'
+      - main
+      - 'dependabot/**'
 
 jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       - name: Set up Docker Buildx
