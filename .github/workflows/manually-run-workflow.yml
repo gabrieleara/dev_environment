@@ -1,0 +1,6 @@
+name: Manually Run a Workflow
+
+# Run workflow manually on main branch
+on: [workflow_dispatch]
+
+# Workflow does nothing, it's just a dummy
